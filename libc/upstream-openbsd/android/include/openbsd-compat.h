@@ -83,13 +83,6 @@ __LIBC_HIDDEN__ extern const char* __bionic_get_shell_path();
 /* OpenBSD has this as API, but we just use it internally. */
 __LIBC_HIDDEN__ void* reallocarray(void*, size_t, size_t);
 
-/* LP32 NDK ctype.h contained references to these. */
-__LIBC32_LEGACY_PUBLIC__ extern const short* _tolower_tab_;
-__LIBC32_LEGACY_PUBLIC__ extern const short* _toupper_tab_;
-
-__LIBC_HIDDEN__ extern const char _C_ctype_[];
-__LIBC_HIDDEN__ extern const short _C_toupper_[];
-__LIBC_HIDDEN__ extern const short _C_tolower_[];
 __LIBC_HIDDEN__ extern char* __findenv(const char*, int, int*);
 __LIBC_HIDDEN__ extern char* _mktemp(char*);
 
