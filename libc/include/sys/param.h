@@ -43,7 +43,11 @@
 #define howmany(x, y)   (((x)+((y)-1))/(y))
 #endif
 #define roundup(x, y)   ((((x)+((y)-1))/(y))*(y))
-#define powerof2(x)     ((((x)-1)&(x))==0)
+
+#define powerof2(x) \
+  ({ __typeof__(x) _x = (x); \
+     __typeof__(x) _x2; \
+     __builtin_add_overflow(_x, -1, &_x2) ? 1 : ((_x2&_x) == 0 ); })
 
 /* Macros for min/max. */
 #define MIN(a,b) (((a)<(b))?(a):(b))
