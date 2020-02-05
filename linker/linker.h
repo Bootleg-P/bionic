@@ -206,3 +206,5 @@ android_namespace_t* get_exported_namespace(const char* name);
 
 void increment_dso_handle_reference_counter(void* dso_handle);
 void decrement_dso_handle_reference_counter(void* dso_handle);
+
+ElfW(Versym) find_verdef_version_index(const soinfo* si, const version_info* vi);
