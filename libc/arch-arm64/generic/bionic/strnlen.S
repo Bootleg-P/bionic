@@ -13,6 +13,8 @@
 
 #include <private/bionic_asm.h>
 
+#define L(l) .L ## l
+
 #define srcin		x0
 #define cntin		x1
 #define result		x0
